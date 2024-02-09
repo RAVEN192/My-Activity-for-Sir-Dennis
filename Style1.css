@@ -1,0 +1,105 @@
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  margin: 0;
+  background-image: url('wutheringwaves_galley1680153623466.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  font-family: 'Roboto', sans-serif;
+  line-height: 1.6;
+}
+
+form {
+  max-width: 400px;
+  width: 100%;
+  padding: 20px;
+  border: 1px solid #ccc;
+  background-color: rgba(116, 116, 116, 0.6);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1), 0 0 10px rgba(255, 255, 255, 0.4) inset;
+  border-radius: 5px;
+  color: white;
+  position: relative;
+  z-index: 1;
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+form:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2), 0 0 20px rgba(255, 255, 255, 0.6) inset;
+}
+
+form:before {
+  content: '';
+  position: absolute;
+  top: -1px;
+  left: -1px;
+  right: -1px;
+  bottom: -1px;
+  border: 1px solid transparent;
+  border-radius: inherit;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.4);
+  animation: glow 2s linear infinite;
+  z-index: -1;
+}
+
+@keyframes glow {
+  0%, 100% {
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.4);
+  }
+  50% {
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.6);
+  }
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+input,
+button {
+  color: white;
+  border: none;
+  border-bottom: 1px solid white;
+  background-color: rgba(0, 0, 0, 0);
+  margin-bottom: 10px;
+  padding: 5px;
+}
+
+input:focus,
+button:focus {
+  outline: none; 
+  border-bottom: 1px solid transparent; 
+}
+
+button {
+  position: relative;
+  overflow: hidden;
+  border-radius: 5px;
+  cursor: pointer;
+  border: none;
+}
+
+button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  background-color: #3d3d3d; 
+  transition: width 0.3s ease; 
+  z-index: -1; 
+  border-radius: 5px;
+  border: none;
+}
+
+button:hover::before {
+  width: 100%; 
+  border-radius: 5px;
+  border: none;
+}
+
